@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <AssemblyName>AutoPricer</AssemblyName>
+    <Description>Middle click to price</Description>
+    <Version>0.0.1</Version>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp" HintPath="$(GameDir)\Supermarket Together_Data\Managed\Assembly-CSharp.dll" Publicize="true"/>
+    <Reference Include="Mirror" HintPath="$(GameDir)\Supermarket Together_Data\Managed\Mirror.dll"/>
+    <Reference Include="Unity.TextMeshPro" HintPath="$(GameDir)\Supermarket Together_Data\Managed\Unity.TextMeshPro.dll"/>
+    <Reference Include="UnityEngine" HintPath="$(GameDir)\Supermarket Together_Data\Managed\UnityEngine.dll"/>
+    <Reference Include="UnityEngine.CoreModule" HintPath="$(GameDir)\Supermarket Together_Data\Managed\UnityEngine.CoreModule.dll"/>
+    <Reference Include="UnityEngine.InputLegacyModule" HintPath="$(GameDir)\Supermarket Together_Data\Managed\UnityEngine.InputLegacyModule.dll"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all"/>
+    <PackageReference Include="BepInEx.Core" Version="5.*"/>
+    <PackageReference Include="BepInEx.PluginInfoProps" Version="1.*"/>
+    <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.*"/>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all"/>
+  </ItemGroup>
+</Project>
